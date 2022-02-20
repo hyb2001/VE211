@@ -1,0 +1,537 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{geometry}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{pdfpages}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{longtable}
+
+\includepdfset{pagecommand={\thispagestyle{fancy}}}%page number for pdf
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+\geometry{left=2cm,right=2cm,top=3cm,bottom=3cm}
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\begin{center}
+~\\
+\rule[0mm]{400pt}{0.5pt}
+\Large{ \textsc{\newline\\UM-SJTU Joint Institute\\Physics Laboratory\\(Vp241)\\}}
+\rule[0mm]{400pt}{0.5pt}
+\Large{ \textsc{\newline\newline\newline\newline\newline\newline\\
+Laboratory Report\\}}
+\Large{\textsc{ \\ Exercise 2  \\ The Hall Probe: \\ Characteristics and Applications} }
+
+\end{center}
+
+\begin{description}
+    \item[] 
+    \item[] 
+    \item[] 
+    \item[] 
+    \item[] 
+    \item[]
+    \item[]\qquad \qquad Name: Han Yibei \qquad ID:519370910123   \qquad    Group:11\\
+    \item[]\qquad \qquad Date: \today
+\end{description}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+\section{Abstract}
+In this experiment, we will have the basc understand of Hall Effect. We verify the fact that Hall voltage is proportional to the magnetic field, while the slope represents the sensitivity of the center of an integrated Hall probe $K_H$, 31.7$\pm$0.7V/T, with -3.94\% relative error to sigularly measured data and 1.44\% relative error with the theoretical value. Also, we measure the magnetic field distribution along the axis of the solenoid and found its distribution similar to the corresponding theoretical curve.
+
+
+
+\section{Introduction}
+\subsection{Motivation}
+The Hall effect has large application in the measurement of many important physics quantities. So, it's important for an engineer to study the basic knowledgement of the Hall effect and understand its usage. For example, the Hall devices can monitor and measure the variation of operating parameters of various parts of the automobile by detecting magnetic field change and converting it into electrical signal output. Position, displacement, Angle, angular velocity, rotational speed can be quadratic transformation to further detect mass, liquid level, flow rate to improve the safety and comfort level of an automobile.[2] And it also has many other useful applications to ensure the life security and enhance life quality.
+
+\subsection{Theoratical Background}
+\subsubsection{Hall Effect}
+When a conducting sheet (matal, an semiconductor) is placed in a magnetic field which direction is perpendicular to the plane of the sheet while an electric current $I$ parallelly passes through the sheet as shown in Fig.\ref{halleffect}, an electric potential difference may appear between the sides a and b of the sheet. This effect is called the Hall effect and the potential difference is known as the Hall voltage $U_H$. \par
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{halleffect.png}
+    \caption{the illustration of the Hall effect~~[1]}
+    \label{halleffect}
+\end{figure}
+
+The Hall effect caused by the Lorentz force. When charges moving in a magnetic field, the Lorentz force $F_B$ make the moving charges to deflect and accumulate on one side of the sheet, which will also increases the transverse electric filed $E_H$(the Hall field). This field will in turn produce an electric force $F_E$ which acts on moving charges with opposite direction to $F_B$. When $F_E$ and $F_B$ reach in their balance state, the charges no longer deflect and $U_H$ stabilizes. When B is upward and I is to the right. If the sheet carries positive charge, then the voltage of a is lower than b. We can analyze the sign of $U_H$ and determine the type of the charge carriers in semiconductors. \par
+When the B is somehow weak, the Hall voltage can be presented as: 
+\begin{equation}
+    U_H=R_H\frac{IB}{d}=KIB~~~[1]
+\end{equation}
+Where $R_H$ is the Hall coefficient and $K=\frac{R_H}{d}=\frac{K_H}{I}$, where $K_H$ is the sensitivity of the Hall element.
+
+\subsubsection{Integrated Hall Probe}
+When $K_H$ and I are fixed, B can be found by measuring the Hall voltage with a Hall probe. Amplifer should be used to magnify the small Hall voltage.\par 
+The Hall probe and the circuit are designed using silicon. A device called integrated Hall probe is a single device combining both the Hall probe and the electric circuit. "The integrated Hall probe SS495A consists of a Hall sensor, an amplifier, and a voltage compensator(Fig.\ref{probe})[1]." Regardless of residual voltage, we can directly read the output voltage U. The working voltage is $U_S$=5V, and the output voltage $U_0$ is approximately 2.5V when B=0. The relation between U and the magnitude of B is:
+\begin{equation}
+    B=\frac{U-U_0}{K_H}~~~[1]
+\end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=12cm]{probe.png}
+    \caption{The integrated Hall probe SS495A (right) The relation between the output voltage U and B (left) [1]}
+    \label{probe}
+\end{figure}
+
+
+\subsubsection{Magnetic Field Distribution Inside a Solenoid}
+On the axis of a single layer solenoid, the magnetic field distribution can be represented as 
+\begin{equation}
+    B(x)=\mu_0\frac{N}{L}I_M(\frac{L+2x}{2[D^2+(L+2x)^2]^{\frac{1}{2}}}+\frac{L-2x}{2[D+(L-2x)^2]^{\frac{1}{2}}})=C(x)I_M ~~~[1]
+\end{equation}
+where N is the turns number of the solenoid, $I_M$ is the passing through current, L is the length, and D is the diameter of solenoid. "The magnetic permeability of vacuum is $\mu_0=4\pi\times{10}^{-7}H/m.$" [1] \par 
+In this lab, the solenoid has ten layers, and B(x) for each layer can be presented by the equation above. Then the net magnetic on the axis of the solenoid can be calculated by integrating B of all layers. The theoretical value are presented in Table \ref{theo}.
+
+\begin{table}[H]
+    \centering
+    \includegraphics[width=12cm]{theoratical.png}
+    \caption{Theoretical value of the magnetic field inside the solenoid.~~[1]}
+    \label{theo}
+\end{table}
+
+\subsubsection{Study of the Geomagnetic Field with a Hall Probe}
+The geomagnetic field of the Earth is similar to a tilted bar with tilting angle about 11.5\degree from the spin axis. Fig.\ref{earth} shows the magnetic filed lines of the Geomagnetic field.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5.5cm]{earth.png}
+    \caption{Magnetic field of the Earth~~[1]}
+    \label{earth}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{china.png}
+    \caption{Geomagnetic inclination in China,1970(left). The magnitude of the geomagnetic field in China,1970(right).~~[1]}
+    \label{china}
+\end{figure}
+
+Fig.\ref{china} represent the geomagnetic field distribution of 1970 China." The magnetic inclination is about 44.5\degree and the magnitude of the magnetic field in Shanghai is about 48000nT." [1]
+
+
+
+\section{Discription of Experiment}
+\subsection{Apparatus}
+Fig.\ref{apparatus} shows the "integrated Hall probe SS495A, a solenoid, a power supply, a voltmeter, a DC voltage divider, and a set of connecting wires." [1]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7.5cm]{apparatus.png}
+    \caption{Experimental setup~~[1]}
+    \label{apparatus}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4.5cm]{probefig.png}
+    \caption{Integrated Hall probe SS495A~~[1]}
+    \label{probefig}
+\end{figure}
+
+\subsection{Device Information}
+The information of each measurement device is shown in Table \ref{information}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    Apparatus  & Range  & Minimum scale of   value & Maximum   uncertainty \\ \hline
+    Voltage source  & / & 0.01V& 0.5\%  \\ \hline
+    Voltimeter & / & 0.001V or 0.0001V & 0.05\%+6$\times 10^{-3}$ or 6$\times 10^{-4}$ \\ \hline
+    Current Source  & / & 0.01A& 2\%  \\ \hline
+    Graduated Ruler & 0$\sim$30cm & 0.1cm& $\pm$0.05cm  \\\hline
+    \end{tabular}
+    \caption{Information of Each Measurement Device}
+    \label{information}
+\end{table}
+
+\subsection{Measurement Procedure}
+\subsubsection{Relation Between Sensitivity $K_H$ and Working Voltage $U_S$}
+First, place the integrated Hall probe, make the reading exactly 15cm. Open all the source and set the voltage source to 5v. The measure the output voltage both when current source equal to 0mA and 250mA. Take the theoretical value of $B(x = 0)$ from Equation 3 and calculate the sensitivity of the probe $K_H$ by using Equation 2. Then, change the voltage source from 2.8V to 10V, repeat the output voltage test above. "Calculate $K_H/U_S$ and plot the curve $K_H/U_S$ vs. $U_S$." [1]
+
+\subsubsection{Relation between Output Voltage U and Magnetic Field B}
+Close all the source and voltmeter, use an voltage divider to amplify the output voltage when B=0, voltage source equal to 5V. By switching the button, change the output voltage to approximately 0V. Place the integrated Hall probe, make the reading exactly 15cm. Change the current source from 0mA to 500mA with each intervals equal to 50mA. Record the output voltage. Find the theoratical relation of B anh $U_H$.  Then "plot the curve U vs. B and find the sensitivity $K_H$ by a linear fit (use a computer)". Then analyze the output.
+
+\subsubsection{Magnetic Field Distribution Inside the Solenoid}
+Make the circuit still, change the current source to 250mA. Change the position of hall probe and record the certain position with its o=corresponding output voltage. Then plot B by the supporting of previous part. Plot the theoretical and the experimental curve in one figure and analyze the output.
+
+\subsubsection{Caution}
+We did followed things to make the result more accurate.\par
+Turn off all the sources after one sub experimentand wait until the saturate state for next usage; let the electronic device leave as far as we can from the probe to reduce some disturbance; wait for a while after changing the magnitude of the sources and only record the stable readouts.
+
+\section{Result}
+\subsection{Relation Between Sensitivity $K_H$ and Working Voltage $U_S$}
+\subsubsection{Calculation of $K_H$}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    $U_S$[V]$\pm$0.5\%[V] & 5.00$\pm$0.03  \\ \hline
+    $U_0$($I_M$=0)[V]$\pm$0.05\%+$6\times 10^{-3}$[V] & 2.511$\pm$0.007 \\ \hline
+    $U_S$($I_M$=250mA)[V]$\pm$0.05\%+$6\times 10^{-3}$[V] & 2.630$\pm$0.007 \\ \hline
+    \end{tabular}
+    \caption{Data for $U_0$ and U with $U_S$=5V}
+    \end{table}
+$$u_{U_S}=U_S\times 0.5\%=5\times 0.005=0.03V$$
+$$u_{U_0}=U_0\times 0.05\%+6\times 10^{-3}=0.007V$$
+$$u_{U_S}=U_S\times 0.05\%+6\times 10^{-3}=0.007V$$
+
+From Table \ref{theo} we get when x=0cm, $I_M=0.1A$, $B_0$=1.4366mT\par
+Now I=250mA. Since B is propotional to I, we can calculate B:
+$$B=B_0\times \frac{I}{I_M}=1.4366\times 10^{-3}\times \frac{250\times 10^{-3}}{0.1}=3.5915\times 10^{-3}T$$
+Using Equation 2, we can calculate $K_H$:
+$$K_H=\frac{U-U_0}{B}=\frac{2.630-2.511}{3.5915\times 10^{-3}}=33V/T\pm 3V/T$$
+The uncertainty is calculated as follow
+$$\frac{\partial K_H}{\partial U}=\frac{1}{B}=\frac{1}{3.5915\times 10^{-3}}=278.44$$
+$$\frac{\partial K_H}{\partial U_0}=-\frac{1}{B}=-\frac{1}{3.5915\times 10^{-3}}=-278.44$$
+$$u_{K_{H}}=\sqrt{\left(\frac{\partial K_{H}}{\partial U}\right)^{2} u_{U}^{2}+\left(\frac{\partial K_{H}}{\partial U_{0}}\right)^{2} u_{U_{0}}^{2}}=\sqrt{(278.44)^{2} \times 0.007^{2}+(-278.44)^{2} \times 0.007^{2}}=3 \mathrm{~V} / \mathrm{T}$$
+
+Take 31.25V/T$\pm$1.25V marked on the apparatus as the theoretical value for $K_H$:
+$$u_{K_H}=\frac{33-31.25}{31.25}=5.6\%$$
+
+\subsubsection{Measurement of $U_0$ and U under different $U_S$}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $U_s$(V) & $U_0$(V) & U(V) & $u_{U_S}$ & $u_{U_0}$ & $u_U$ \\ \hline
+    2.80 & 1.4040 & 1.4702 & 0.014 & 0.0013 & 0.0013 \\ \hline
+    3.20 & 1.6051 & 1.6815 & 0.016 & 0.0014 & 0.0014 \\ \hline
+    3.60 & 1.8109 & 1.8977 & 0.018 & 0.0015 & 0.0015 \\ \hline
+    4.00 & 2.0087 & 2.1050 & 0.02  & 0.0016 & 0.0017 \\ \hline
+    4.40 & 2.211  & 2.317  & 0.02  & 0.007  & 0.007  \\ \hline
+    4.88 & 2.447  & 2.563  & 0.02  & 0.007  & 0.007  \\ \hline
+    5.33 & 2.670  & 2.796  & 0.03  & 0.007  & 0.007  \\ \hline
+    5.73 & 2.878  & 3.013  & 0.03  & 0.007  & 0.008  \\ \hline
+    6.12 & 3.066  & 3.206  & 0.03  & 0.008  & 0.008  \\ \hline
+    6.50 & 3.259  & 3.406  & 0.03  & 0.008  & 0.008  \\ \hline
+    6.95 & 3.478  & 3.633  & 0.03  & 0.008  & 0.008  \\ \hline
+    7.48 & 3.738  & 3.900  & 0.04  & 0.008  & 0.008  \\ \hline
+    7.97 & 3.981  & 4.148  & 0.04  & 0.008  & 0.008  \\ \hline
+    8.40 & 4.193  & 4.364  & 0.04  & 0.008  & 0.008  \\ \hline
+    8.83 & 4.406  & 4.581  & 0.04  & 0.008  & 0.008  \\ \hline
+    9.19 & 4.579  & 4.756  & 0.05  & 0.008  & 0.008  \\ \hline
+    9.66 & 4.809  & 4.989  & 0.05  & 0.008  & 0.008  \\ \hline
+    9.96 & 4.959  & 5.140  & 0.05  & 0.008  & 0.009  \\ \hline
+    \end{tabular}
+    \caption{Data for $U_0$ and U with different $U_S$}
+    \label{u0usu}
+\end{table}
+
+We change different value of $U_S$, $U_0$ is measured when $I_M$=0mA, $U$ is measured when $I_M$=250mA. The measured data are recorded in Table \ref{u0usu}
+
+\subsubsection{Relation between $K_H$ and $U_S$}
+Then we calculate $\frac{K_H}{U_S}=\frac{U-U_0}{BU_S}$. The values of different $U_S$ and their uncertainties are shown in Table \ref{uskh}.
+$$
+u_{K_{H}}=\sqrt{\left(\frac{\partial K_{H}}{\partial U} u_{U}\right)^{2}+\left(\frac{\partial K_{H}}{\partial U_{0}} u_{U_{0}}\right)^{2}}=\sqrt{\left(\frac{u_{U}}{B}\right)^{2}+\left(\frac{-u_{U_{0}}}{B}\right)^{2}}
+$$
+$$
+\begin{array}{c}
+\frac{\partial \frac{K_{H}}{U_{S}}}{\partial \mathrm{U}}=\frac{1}{B U_{S}} \quad \frac{\partial \frac{K_{H}}{U_{S}}}{\partial U_{0}}=\frac{-1}{B U_{S}} \quad \frac{\partial \frac{K_{H}}{U_{S}}}{\partial U_{S}}=\frac{U_{0}-U}{B U_{S}^{2}} \\
+u_{\frac{K_{H}}{U_{S}}}=\sqrt{\left(\frac{\partial \frac{K_{H}}{U_{S}}}{\partial \mathrm{U}}\right)^{2} u_{U}^{2}+\left(\frac{\partial \frac{K_{H}}{U_{S}}}{\partial U_{0}}\right)^{2} u_{U_{0}}^{2}+\left(\frac{\partial \frac{K_{H}}{U_{S}}}{\partial U_{S}}\right)^{2} u_{U_{S}}^{2}} \\
+=\sqrt{\left(\frac{1}{B U_{S}}\right)^{2} u_{U}^{2}+\left(\frac{-1}{B U_{S}}\right)^{2} u_{U_{0}}^{2}+\left(\frac{U_{0}-U}{B U_{S}^{2}}\right)^{2} u_{U_{S}}^{2}}
+\end{array}
+$$
+Take the $1^{\text {st }}$ row of data for example:
+$$
+u_{K_{H}}=\sqrt{(\frac{0.0013}{3.5915 \times 10^{-3}})^2+()\frac{-0.0013}{3.5915 \times 10^{-3}})^2}=0.5V/T
+$$
+\begin{align*}
+    u_{\frac{K_{H}}{U_{S}}}&=\sqrt{\left(\frac{0.0013}{3.5915 \times 10^{-3} \times 2.80}\right)^{2}+\left(\frac{-0.0013}{3.5915 \times 10^{-3} \times 2.80}\right)^{2}+\left(\frac{1.4040-1.4702}{3.5915 \times 10^{-3} \times 2.80^{2}}\right)^{2} \times 0.014^{2}} \\
+    &=0.19T^{-1}
+\end{align*}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $U_s$(V) &$K_H$[V/T]& $\frac{K_H}{U_S}(T^{-1})$ & $u_{U_S}$(V) &$u_{K_H}$[V/T]&$u_{\frac{K_H}{U_S}}(T^{-1})$\\ \hline
+    2.800 & 18.4 & 6.58 & 0.014 & 0.5 & 0.19 \\ \hline
+    3.200 & 21.3 & 6.65 & 0.016 & 0.5 & 0.18 \\ \hline
+    3.600 & 24.2 & 6.71 & 0.018 & 0.5 & 0.17 \\ \hline
+    4.00  & 26.8 & 6.70 & 0.02  & 0.6 & 0.16 \\ \hline
+    4.40  & 30   & 6.7  & 0.02  & 3   & 0.6  \\ \hline
+    4.88  & 32   & 6.6  & 0.02  & 3   & 0.6  \\ \hline
+    5.33  & 35   & 6.6  & 0.03  & 3   & 0.5  \\ \hline
+    5.73  & 38   & 6.6  & 0.03  & 3   & 0.5  \\ \hline
+    6.12  & 39   & 6.4  & 0.03  & 3   & 0.5  \\ \hline
+    6.50  & 41   & 6.3  & 0.03  & 3   & 0.5  \\ \hline
+    6.95  & 43   & 6.2  & 0.03  & 3   & 0.4  \\ \hline
+    7.48  & 45   & 6.0  & 0.04  & 3   & 0.4  \\ \hline
+    7.97  & 46   & 5.8  & 0.04  & 3   & 0.4  \\ \hline
+    8.40  & 48   & 5.7  & 0.04  & 3   & 0.4  \\ \hline
+    8.83  & 49   & 5.5  & 0.04  & 3   & 0.4  \\ \hline
+    9.19  & 49   & 5.4  & 0.05  & 3   & 0.4  \\ \hline
+    9.66  & 50   & 5.2  & 0.05  & 3   & 0.3  \\ \hline
+    9.96  & 50   & 5.1  & 0.05  & 3   & 0.3  \\ \hline
+    \end{tabular}
+    \caption{Us and KH and KH/Us}
+    \label{uskh}
+\end{table}
+
+Then we plot the dots, shown in Fig.\ref{khusfig}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{khus.png}
+    \caption{Plot of KH/Us and Us}
+    \label{khusfig}
+\end{figure}
+
+\subsection{Relation between Output Voltage U and Magnetic Field B}
+\subsubsection{Measurement of $I_M$ and U}
+We measure output voltage U under different $I_M$, and record the results in Table \ref{uim}:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    $I_M$[A] &  $U_{I_M}$[A]  & U[V]  & $u_U$[V]  \\ \hline
+    0    & 0& 0.0001 & 0.0006 \\ \hline
+    0.05 & 0.001 & 0.0279 & 0.0006 \\ \hline
+    0.1  & 0.002 & 0.0519 & 0.0006 \\ \hline
+    0.15 & 0.003 & 0.0751 & 0.0006 \\ \hline
+    0.2  & 0.004 & 0.0982 & 0.0006 \\ \hline
+    0.25 & 0.005 & 0.1170 & 0.0007 \\ \hline
+    0.3  & 0.006 & 0.1426 & 0.0007 \\ \hline
+    0.35 & 0.007 & 0.1648 & 0.0007 \\ \hline
+    0.4  & 0.008 & 0.1857 & 0.0007 \\ \hline
+    0.45 & 0.009 & 0.2098 & 0.0007 \\ \hline
+    0.5  & 0.01  & 0.2299 & 0.0007 \\ \hline
+    \end{tabular}
+    \caption{Measurement data for the IM vs. U relation}
+    \label{uim}
+\end{table}
+From Table 1 we get when $\mathrm{x}=0 \mathrm{~cm}, \quad I_{M}=0.1 \mathrm{~A}, \quad B_{0}=1.4366 \mathrm{mT}$
+Now $\mathrm{I}=I_{M} .$ since $\mathrm{B}$ is proportional to $\mathrm{I}$, we calculate $\mathrm{B}$. Take $I_{M}=0.05$ A for example:
+$$
+B=B_{0} \times \frac{I_{M}}{I_{0}}=1.4366 \times 10^{-3} \times \frac{0.05}{0.1}=0.00072 \pm 0.00001 T
+$$
+$$u_B=1.4366\times 10^{-2} \times U_{I_M}=1.4366\times 10^{-2} \times 0.001=0.00001$$
+We arrange the data and the uncertainty in Table \ref{imb}:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    U[V] & $u_U$[V]  & B[T]  &  $u_B$[T]  \\ \hline
+    0.0001 & 0.0006 & 0.00000 & 0.00000 \\ \hline
+    0.0279 & 0.0006 & 0.00072 & 0.00001 \\ \hline
+    0.0519 & 0.0006 & 0.00144 & 0.00003 \\ \hline
+    0.0751 & 0.0006 & 0.00215 & 0.00004 \\ \hline
+    0.0982 & 0.0006 & 0.00287 & 0.00006 \\ \hline
+    0.1170 & 0.0007 & 0.00359 & 0.00007 \\ \hline
+    0.1426 & 0.0007 & 0.00431 & 0.00009 \\ \hline
+    0.1648 & 0.0007 & 0.00503 & 0.00010 \\ \hline
+    0.1857 & 0.0007 & 0.00575 & 0.00011 \\ \hline
+    0.2098 & 0.0007 & 0.00646 & 0.00013 \\ \hline
+    0.2299 & 0.0007 & 0.00718 & 0.00014 \\ \hline
+    \end{tabular}
+    \caption{Relation of U and B}
+    \label{imb}
+\end{table}
+
+Then we apply linear fit to U and B, shown in Fig.\ref{imbfig}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10cm]{ub.png}
+    \caption{Linear Fit of U and B}
+    \label{imbfig}
+\end{figure}
+
+The slope of the line is 31.7$\pm$0.7 V/T, which shows the magnitude of $K_H$. The relative error with the value calculated in 4.1 is:
+$$u_{r,K_H,1}=\frac{31.7-33}{33}=-3.94\%$$
+We take $K_H$=31.25$\pm$1.25V marked on the apparatus as the theoretical value, the relative error compared with the theoretical value is 
+$$u_{r,K_H,2}=\frac{31.7-31.25}{31.25}=1.44\%$$
+
+\subsection{ Magnetic Field Distribution Inside the Solenoid}
+
+We measured the magnetic field inside the Solenoid along the axis at different distance. The experimental data is shown in Table \ref{ubi}. \par 
+Based on the value of U, we calculate the corresponding B by the equation:
+$$B=\frac{U}{K_H}$$
+$$
+\begin{array}{c}
+B=\frac{U}{K_{H}} \\
+\frac{\partial B}{\partial U}=\frac{1}{K_{H}}=\frac{1}{31.7}=0.0315 \\
+\frac{\partial B}{\partial K_{H}}=-\frac{U}{K_{H}^{2}} \\
+u_{B}=\sqrt{\left(\frac{\partial B}{\partial U}\right)^{2} u_{U}^{2}+\left(\frac{\partial B}{\partial K_{H}}\right)^{2} u_{K_{H}}^{2}}=\sqrt{(0.0315)^{2} u_{U}^{2}+\left(-\frac{U}{K_{H}^{2}}\right)^{2} u_{K_{H}}^{2}}
+\end{array}
+$$
+Take the $1^{\text {st }}$ row of data for example:
+$$
+u_{B}=\sqrt{(0.0315)^{2} \times 0.0006^{2}+\left(-\frac{0.0114}{31.7^{2}}\right)^{2} \times 0.7^{2}}=0.00002 T
+$$
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    (x-15)[cm]$\pm$0.05[cm] & U[V] & $u_U$[V] & B[T] & $u_B$[T]  \\ \hline
+    -15.00 & 0.0114 & 0.0006 & 0.00036 & 0.00002 \\ \hline
+    -14.70 & 0.0131 & 0.0006 & 0.00041 & 0.00002 \\ \hline
+    -14.40 & 0.0152 & 0.0006 & 0.00048 & 0.00002 \\ \hline
+    -14.10 & 0.0182 & 0.0006 & 0.00057 & 0.00002 \\ \hline
+    -13.90 & 0.0204 & 0.0006 & 0.00064 & 0.00002 \\ \hline
+    -13.60 & 0.0247 & 0.0006 & 0.00078 & 0.00002 \\ \hline
+    -13.30 & 0.0312 & 0.0006 & 0.00098 & 0.00002 \\ \hline
+    -13.00 & 0.0381 & 0.0006 & 0.00120 & 0.00002 \\ \hline
+    -12.70 & 0.0464 & 0.0006 & 0.00146 & 0.00002 \\ \hline
+    -12.40 & 0.0565 & 0.0006 & 0.00178 & 0.00002 \\ \hline
+    -12.10 & 0.0672 & 0.0006 & 0.00212 & 0.00002 \\ \hline
+    -11.80 & 0.0756 & 0.0006 & 0.00238 & 0.00002 \\ \hline
+    -11.50 & 0.0845 & 0.0006 & 0.00266 & 0.00002 \\ \hline
+    -11.00 & 0.0947 & 0.0006 & 0.00299 & 0.00002 \\ \hline
+    -10.00 & 0.1064 & 0.0007 & 0.00336 & 0.00002 \\ \hline
+    -9.50  & 0.1095 & 0.0007 & 0.00345 & 0.00002 \\ \hline
+    -9.00  & 0.1114 & 0.0007 & 0.00352 & 0.00002 \\ \hline
+    -8.50  & 0.1128 & 0.0007 & 0.00356 & 0.00002 \\ \hline
+    -8.00  & 0.1136 & 0.0007 & 0.00358 & 0.00002 \\ \hline
+    -7.00  & 0.1150 & 0.0007 & 0.00363 & 0.00002 \\ \hline
+    -6.00  & 0.1158 & 0.0007 & 0.00365 & 0.00002 \\ \hline
+    -5.00  & 0.1163 & 0.0007 & 0.00367 & 0.00002 \\ \hline
+    -4.00  & 0.1166 & 0.0007 & 0.00368 & 0.00002 \\ \hline
+    -3.00  & 0.1168 & 0.0007 & 0.00369 & 0.00002 \\ \hline
+    ~~~~~~~-1.80~~~~~~~  & 0.1168 & 0.0007 & 0.00368 & 0.00002 \\ \hline
+    -0.50  & 0.1167 & 0.0007 & 0.00368 & 0.00002 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    0.00   & 0.1167 & 0.0007 & 0.00368 & 0.00002 \\ \hline
+    1.00   & 0.1167 & 0.0007 & 0.00368 & 0.00002 \\ \hline
+    2.00   & 0.1174 & 0.0007 & 0.00370 & 0.00002 \\ \hline
+    3.00   & 0.1175 & 0.0007 & 0.00371 & 0.00002 \\ \hline
+    4.00   & 0.1172 & 0.0007 & 0.00370 & 0.00002 \\ \hline
+    5.00   & 0.1166 & 0.0007 & 0.00368 & 0.00002 \\ \hline
+    6.00   & 0.1162 & 0.0007 & 0.00367 & 0.00002 \\ \hline
+    7.00   & 0.1158 & 0.0007 & 0.00365 & 0.00002 \\ \hline
+    8.00   & 0.1153 & 0.0007 & 0.00364 & 0.00002 \\ \hline
+    9.00   & 0.1140 & 0.0007 & 0.00360 & 0.00002 \\ \hline
+    10.00  & 0.1120 & 0.0007 & 0.00353 & 0.00002 \\ \hline
+    11.00  & 0.1083 & 0.0007 & 0.00342 & 0.00002 \\ \hline
+    11.50  & 0.1048 & 0.0007 & 0.00331 & 0.00002 \\ \hline
+    12.00  & 0.0998 & 0.0006 & 0.00315 & 0.00002 \\ \hline
+    12.30  & 0.0959 & 0.0006 & 0.00303 & 0.00002 \\ \hline
+    12.60  & 0.0902 & 0.0006 & 0.00284 & 0.00002 \\ \hline
+    12.90  & 0.0832 & 0.0006 & 0.00262 & 0.00002 \\ \hline
+    13.20  & 0.0753 & 0.0006 & 0.00237 & 0.00002 \\ \hline
+    ~~~~~~~~~~13.50~~~~~~~~~~  & 0.0652 & 0.0006 & 0.00206 & 0.00002 \\ \hline
+    13.80  & 0.0547 & 0.0006 & 0.00172 & 0.00002 \\ \hline
+    14.00  & 0.0485 & 0.0006 & 0.00153 & 0.00002 \\ \hline
+    14.20  & 0.0421 & 0.0006 & 0.00133 & 0.00002 \\ \hline
+    14.40  & 0.0364 & 0.0006 & 0.00115 & 0.00002 \\ \hline
+    14.60  & 0.0317 & 0.0006 & 0.00100 & 0.00002 \\ \hline
+    14.80  & 0.0274 & 0.0006 & 0.00086 & 0.00002 \\ \hline
+    15.00  & 0.0240 & 0.0006 & 0.00076 & 0.00002 \\ \hline
+    \end{tabular}
+    \caption{U and B with different x}
+    \label{ubi}
+\end{table}
+
+We then calculate the theoretical value of B using the data from Table\ref{theo}:
+$$B_{theo}=B_{std}\times \frac{I}{I_M}$$
+The x we take is the scale on the ruler, but the true x should be the distance from the center of the solenoid. Therefore, when we plot the figure, the horizontal coordinate should be x-15cm.\par 
+From the figure, we could see that two plots are very closed to each other. This shows that the experimental value verify the theoretical value.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    x{[}cm{]} & $B_{std}$[T]   & $B_{theo}${[}T{]} & x{[}cm{]} &   $B_{std}$[T]& $B_{theo}${[}T{]} \\ \hline
+    -13& 0.7233 & 0.0018  & 1  & 1.4363 & 0.0036  \\ \hline
+    -12.5& 0.9261 & 0.0023  & 2  & 1.4356 & 0.0036  \\ \hline
+    -12& 1.0863 & 0.0027  & 3  & 1.4343 & 0.0036  \\ \hline
+    -11.5& 1.1963 & 0.0030   & 4  & 1.4323 & 0.0036  \\ \hline
+    -11& 1.2685 & 0.0032  & 5  & 1.4292 & 0.0036  \\ \hline
+    -10& 1.3478 & 0.0034  & 6  & 1.4245 & 0.0036  \\ \hline
+    -9 & 1.3856 & 0.0035  & 7  & 1.4173 & 0.0035  \\ \hline
+    -8 & 1.4057 & 0.0035  & 8  & 1.4057 & 0.0035  \\ \hline
+    -7 & 1.4173 & 0.0035  & 9  & 1.3856 & 0.0035  \\ \hline
+    -6 & 1.4245 & 0.0036  & 10 & 1.3478 & 0.0034  \\ \hline
+    -5 & 1.4292 & 0.0036  & 11 & 1.2685 & 0.0032  \\ \hline
+    -4 & 1.4323 & 0.0036  & 11.5 & 1.1963 & 0.0030   \\ \hline
+    -3 & 1.4343 & 0.0036  & 12 & 1.0863 & 0.0027  \\ \hline
+    -2 & 1.4356 & 0.0036  & 12.5 & 0.9261 & 0.0023  \\ \hline
+    -1 & 1.4363 & 0.0036  & 13 & 0.7233 & 0.0018  \\ \hline
+    0  & 1.4366 & 0.0036  &    & &  \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{btheo.png}
+    \caption{Bexp and Btheo with x}
+    \label{btheo}
+\end{figure}
+
+\section{Conclusions and Discussions}
+
+In this lab, we can achieve the following goals:
+\begin{itemize}
+    \item We have a preliminary understand of the Hall effect's principle and applications by making three experiments with a Hall probe.
+    \item We measured the sensitivity $K_H$ based on the experimental data we got both through formula or fitting. Also, we compare it with the value printed on the Hall probe.
+    \item Make linear fit to Hall voltage $U_H$ and magnetic field B. Find their propotional relationship.
+	\item We measure the solenoid's magnetic field distribution along the axis. Then we compare the output with the corresponding theoretical curve which was calculated through the data given.
+\end{itemize}
+
+In 4.1.1, when Us=5V, we measured $K_H\ast=33\pm$3V/T.\par 
+In 4.1.3, we plot $\frac{K_H}{U_S}$ vs. $U_S$ and found that $\frac{K_H}{U_S}$ almost remains the same although $U_S$ is changing. This shows that $K_H$ is proportional to $U_S$. However, from the plot we can see $\frac{K_H}{U_S}$ has an incline to decrease when $U_S$ is increasing, and this error will be analyzed in next part. \par 
+In 4.2, we measured the output voltage U with different $I_M$. Since $I_M$ is proportional to B, we get the relation between U and B. We find that U is proportional to B. The slope indicates that $K_H=31.7\pm0.7$V/T. 
+We take $K_H=31.25\pm$ 1.25V marked on the apparatus as the theoretical value. Also, in 4.1.1 we measured $K_H\ast=33.13\pm3V/T$. Therefore, $K_H$ from linear fit has a relative error of -1.44\% compared with $K_H\ast$ and has a relative error of 3.94\% compared with the theoretical value.
+In 4.3, we measured the magnetic field B at different x along the axis of the solenoid. From Table \ref{theo} we obtain the theoretical distribution of the magnetic field, and we plot them in Fig.\ref{btheo} and compare them. Their shapes coincide but there is a slight position deviation of the two shape, but the uncertainty is fine due to the uncertainty of the apparatus.\par
+The uncertainty may caused by the following reasons.
+\begin{itemize}
+    \item 	In 4.1, the reason why $\frac{K_H}{U_S}$ has an incline to decrease when $U_S$ is increasing might be the wrong experimental procedure. I first set $I_M=0A$, change the Us from 2.8 to 10V, finish this round of measurement and then set $I_M=250mA$, set the Us equal to the round1 values and then did the second round of measurement. Therefore, with the same Us, U0 and U are measured under a large time interval, which results in deviations in these two factors.
+    \item Instability of displaying of U0 and U; In procedure 4.2.1, U0 is very hard to be adjusted to completely 0.
+    \item The Hall probe might move its position when measuring
+    \item Rise of temperature causing R to change.
+\end{itemize}
+Since we have to change $U_S$ and $I_M$ by switching the channel, it’s hard to obtain the value we want. I suggest the source value can be set digitally.
+
+\section{Reference} 
+~~~~[1] Li Tianyi, Qin Tian, Wang Zhiyu, Lin Yiqiao, Bao Yufan, Mateusz Krzyzosiak. Physics Laboratory VP241 Exercise 2: The Hall Probe: Characteristics and Applications. \par
+[2] Kang, Shuai. “Application of Hall Effect in Semiconductor Material.” Advanced Materials Research, vol. 986-987, 2014, pp. 21–24., doi:10.4028/www.scientific.net/amr.986-987.21. 
+
+\begin{description}
+    \item[]   
+\end{description}
+
+{\LARGE\textbf{APPENDIX}}
+\setcounter{section}{0}
+\renewcommand\thesection{\Alph{section}}
+\section{Data Sheet}
+
+
+\end{document}
